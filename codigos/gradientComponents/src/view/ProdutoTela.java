@@ -3,9 +3,6 @@ package view;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -13,7 +10,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,9 +32,9 @@ public class ProdutoTela extends JFrame {
 	private JTextField textFieldNome;
 	private JTextField textFieldQuantidade;
 	private JTextField textFieldValor;
-	private JButton btnSalvar;
-	private JButton btnAtualizar;
-	private JButton btnExcluir;
+	private JButtonGradient btnSalvar;
+	private JButtonGradient btnAtualizar;
+	private JButtonGradient btnExcluir;
 	
 	private ProdutoController controller;
 	private ProdutoTabelModel tableModel = new ProdutoTabelModel();
@@ -155,8 +151,19 @@ public class ProdutoTela extends JFrame {
 		lblValor.setBounds(469, 78, 35, 14);
 		contentPane.add(lblValor);
 		
-		btnSalvar = new JButton();
+		btnSalvar = new JButtonGradient();
 		btnSalvar.setText("SALVAR");
+		btnSalvar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnSalvar.setForeground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnSalvar.setForeground(Color.WHITE);
+			}
+		});
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.adicionarProduto();
@@ -166,8 +173,19 @@ public class ProdutoTela extends JFrame {
 		btnSalvar.setBounds(10, 144, 120, 28);
 		contentPane.add(btnSalvar);
 		
-		btnAtualizar = new JButton();
+		btnAtualizar = new JButtonGradient();
 		btnAtualizar.setText("ATUALIZAR");
+		btnAtualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnAtualizar.setForeground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnAtualizar.setForeground(Color.WHITE);
+			}
+		});
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.atualizarProduto();
@@ -177,8 +195,19 @@ public class ProdutoTela extends JFrame {
 		btnAtualizar.setBounds(137, 144, 112, 28);
 		contentPane.add(btnAtualizar);
 		
-		btnExcluir = new JButton();
+		btnExcluir = new JButtonGradient();
 		btnExcluir.setText("EXCLUIR");
+		btnExcluir.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnExcluir.setForeground(Color.CYAN);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnExcluir.setForeground(Color.WHITE);
+			}
+		});
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.excluirProduto();

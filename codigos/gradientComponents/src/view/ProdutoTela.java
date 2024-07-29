@@ -78,6 +78,8 @@ public class ProdutoTela extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 183, 659, 261);
+		scrollPane.setOpaque(false);
+		scrollPane.getViewport().setOpaque(false);
 		contentPane.add(scrollPane);
 		
 		tableProduto = new JTable();
@@ -112,24 +114,27 @@ public class ProdutoTela extends JFrame {
 		textFieldNome = new JTextField();
 		textFieldNome.setFont(new Font("Arial", Font.PLAIN, 12));
 		textFieldNome.setBorder(new LineBorder(Color.WHITE));
-		textFieldNome.setForeground(Color.BLACK);
+		textFieldNome.setForeground(Color.WHITE);
 		textFieldNome.setBounds(10, 97, 239, 27);
+		textFieldNome.setOpaque(false);
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
 		
 		textFieldQuantidade = new JTextField();
 		textFieldQuantidade.setBorder(new LineBorder(Color.WHITE));
-		textFieldQuantidade.setForeground(Color.BLACK);
+		textFieldQuantidade.setForeground(Color.WHITE);
 		textFieldQuantidade.setFont(new Font("Arial", Font.PLAIN, 12));
 		textFieldQuantidade.setBounds(259, 97, 200, 26);
+		textFieldQuantidade.setOpaque(false);
 		contentPane.add(textFieldQuantidade);
 		textFieldQuantidade.setColumns(10);
 		
 		textFieldValor = new JTextField();
 		textFieldValor.setBorder(new LineBorder(Color.WHITE));
-		textFieldValor.setForeground(Color.BLACK);
+		textFieldValor.setForeground(Color.WHITE);
 		textFieldValor.setFont(new Font("Arial", Font.PLAIN, 12));
 		textFieldValor.setBounds(469, 97, 200, 27);
+		textFieldValor.setOpaque(false);
 		contentPane.add(textFieldValor);
 		textFieldValor.setColumns(10);
 		

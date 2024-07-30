@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -21,6 +22,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 import controller.ProdutoController;
 import model.ProdutoTabelModel;
@@ -83,6 +85,9 @@ public class ProdutoTela extends JFrame {
 		contentPane.add(scrollPane);
 		
 		tableProduto = new JTable();
+		JTableHeader table = tableProduto.getTableHeader();
+		table.setDefaultRenderer(new JHeaderTableGradient());
+		table.setPreferredSize(new Dimension(table.getWidth(), 22));
 		tableProduto.setRowHeight(20);
 		tableProduto.addMouseListener(new MouseAdapter() {
 			@Override

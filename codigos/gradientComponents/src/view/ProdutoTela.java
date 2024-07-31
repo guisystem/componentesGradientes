@@ -85,6 +85,7 @@ public class ProdutoTela extends JFrame {
 		contentPane.add(scrollPane);
 		
 		tableProduto = new JTable();
+		tableProduto.setDefaultRenderer(Object.class, new JTableGradient());
 		JTableHeader table = tableProduto.getTableHeader();
 		table.setDefaultRenderer(new JHeaderTableGradient());
 		table.setPreferredSize(new Dimension(table.getWidth(), 22));

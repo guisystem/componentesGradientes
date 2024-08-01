@@ -75,7 +75,7 @@ public class ProdutoTabelModel extends AbstractTableModel{
 	
 	public void removeRow(int linha) {
 		this.produtos.remove(linha);
-		this.fireTableRowsDeleted(linha, linha); // Deleta a linha na tablea
+		this.fireTableRowsDeleted(linha, linha); // Deleta a linha na tabela
 	}
 	
 	public ModelProduto getProduto(int linha) {

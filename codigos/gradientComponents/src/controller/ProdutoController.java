@@ -28,16 +28,16 @@ public class ProdutoController {
 						helper.limparTela();
 						
 					}else {
-						JOptionPane.showMessageDialog(null, "Valor inválido!");
+						produtoTela.exibeMensagemInformativa("Valor inválido!");
 					}
 				}else {
-					JOptionPane.showMessageDialog(null, "Quantidade inválida!");
+					produtoTela.exibeMensagemInformativa("Quantidade inválida!");
 				}
 			}else {
-				JOptionPane.showMessageDialog(null, "Esse nome de produto já existe!");
+				produtoTela.exibeMensagemInformativa("Esse nome de produto já existe!");
 			}
 		}else {
-			JOptionPane.showMessageDialog(null, "Preencha todos os campos!");			
+			produtoTela.exibeMensagemInformativa("Preencha todos os campos!");
 		}
 		
 		return novoProduto;
@@ -56,29 +56,31 @@ public class ProdutoController {
 						
 						helper.limparTela();							
 					}else {
-						JOptionPane.showMessageDialog(null, "Valor inválido!");
+						produtoTela.exibeMensagemInformativa("Valor inválido!");
 					}
 				}else {
-					JOptionPane.showMessageDialog(null, "Quantidade inválida!");
+					produtoTela.exibeMensagemInformativa("Quantidade inválida!");
 				}
 			}else {
-				JOptionPane.showMessageDialog(null, "Preencha todos os campos!");			
+				produtoTela.exibeMensagemInformativa("Preencha todos os campos!");
 			}
 		}else {
-			JOptionPane.showMessageDialog(null, "Selecione uma linha para atualizar");
+			produtoTela.exibeMensagemInformativa("Selecione uma linha para atualizar");
 		}
 	}
 
-	public void excluirProduto() {
+	public boolean excluirProduto() {
 		if(produtoTela.getTableProduto().getSelectedRow() != -1) {
-			if(JOptionPane.showConfirmDialog(null, "Deseja excluir esse produto?", "Tem certeza?", JOptionPane.YES_NO_OPTION, 
-					JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+			if(produtoTela.exibeMensagemDecisao("Deseja excluir esse produto?") == JOptionPane.YES_OPTION) {
 				produtoTela.getTableModel().removeRow(produtoTela.getTableProduto().getSelectedRow());
-				helper.limparTela();				
+				helper.limparTela();
+				return true;
 			}
 		}else {
-			JOptionPane.showMessageDialog(null, "Selecione uma linha para excluir");
+			produtoTela.exibeMensagemInformativa("Selecione uma linha para excluir");
 		}
+		
+		return false;
 	}
 
 	public void preencherCamposParaAtualizar() {

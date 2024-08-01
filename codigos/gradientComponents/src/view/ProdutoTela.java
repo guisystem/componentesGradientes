@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -233,6 +234,14 @@ public class ProdutoTela extends JFrame {
 		lblAbaProdutos.setForeground(Color.WHITE);
 		lblAbaProdutos.setBounds(299, 20, 80, 20);
 		contentPane.add(lblAbaProdutos);
+	}
+	
+	public int exibeMensagemDecisao(String texto) {
+		return JOptionPane.showConfirmDialog(null, texto, "Tem certeza", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+	}
+	
+	public void exibeMensagemInformativa(String texto) {
+		JOptionPane.showMessageDialog(null, texto);
 	}
 
 	public JTable getTableProduto() {

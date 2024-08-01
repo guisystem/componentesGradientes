@@ -68,13 +68,5 @@ public class JButtonGradient extends JButton {
 		g2d.fill(f);
 
 	}
-
-	public float getAlpha() {
-		return alpha;
-	}
-
-	public void setAlpha(float alpha) {
-		this.alpha = alpha;
-	}
 	
 }
